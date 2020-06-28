@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const { hash, compare } = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
 const Task = require('./task.js');
 
 const userSchema = new mongoose.Schema({
@@ -50,6 +49,8 @@ const userSchema = new mongoose.Schema({
 			required: true
 		}
 	}],
+}, {
+	timestamps: true
 });
 
 userSchema.virtual('tasks', {
