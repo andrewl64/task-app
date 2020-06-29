@@ -28,9 +28,6 @@ router.get('/tasks', auth, async (req, res) => {
 	if (req.query.sortBy) {
 		const parts = req.query.sortBy.split('_');
 		sort[parts[0]] = parts[1] === 'desc' ? -1 : 1;
-		console.log(parts[1]);
-		console.log(sort[parts[1]], 'desc');
-		console.log(sort);
 	}
 	// const tasks = await Task.find({ author: req.user._id });
 	try {
